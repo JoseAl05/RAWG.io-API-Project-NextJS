@@ -1,0 +1,136 @@
+.quote_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.game_name{
+    font-style: italic;
+    font-size: 1.7em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 50%;
+}
+.quote_game_name{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    color: lightgray;
+    font-size: .9em;
+    padding-top: 1%;
+    width: 50%;
+}
+.quote_game_name h3{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+.quote_platforms{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    color: lightgray;
+    font-size: .9em;
+    border-bottom: 1px solid grey;
+    width: 50%;
+}
+.quote_platforms h3{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+.highlight{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: #00909b;
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_no_data{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: red;
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_xbox{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--xbox-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+
+}
+.highlight_playstation{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--playstation-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_pc{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--pc-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_nintendo{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--nintendo-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_macOS{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--macOS-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_linux{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--linux-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_web{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--web-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_iOS{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--iOS-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}

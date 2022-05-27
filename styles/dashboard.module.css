@@ -1,0 +1,309 @@
+.games{
+    position: relative;
+}
+.games h1{
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.form_search_game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+}
+.search_game{
+    width:25%
+}
+.games_grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    gap: 25vh;
+    justify-content: center;
+    justify-items: center;
+    margin:200px 100px 100px 100px;
+}
+.game_searched{
+    max-height: 30rem;
+    overflow-y: scroll;
+}
+
+.next_button{
+    border: none;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    width: 25%;
+    display: block;
+    margin: 200px auto 100px auto;
+}
+.previous_button{
+    border: none;
+    background:red;
+    width: 25%;
+    display: block;
+    margin: 200px auto 100px auto;
+}
+.loading_icon{
+    margin: 25% 0 25% 45%;
+    color: white;
+    animation: spin infinite 2s linear;
+}
+
+
+/* DESKTOP */
+.games_images{
+    transition: transform 0.5s;
+    border-radius: 5px;
+}
+.game_info{
+    position: relative;
+    width: 100%;
+    min-height: 50%;
+    background-size: cover;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s ease;
+    border-radius: 5px;
+}
+.game_info h1{
+    color:white;
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(10px,40px,60px);
+}
+.game_info p {
+    color: white;
+    word-break: break-all;
+    margin: 5%;
+}
+.game_info ul li{
+    color: white;
+    margin: 2%;
+}
+.details{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.details:hover{
+    color: white;
+    transform: scale(1.2);
+    letter-spacing: .2em;
+}
+
+.games_images:hover{
+    transform: scale(1.1);
+}
+.games_images:hover .game_info{
+    z-index: 3000;
+    opacity: 1;
+    transform: translateY(0%);
+    background-color: #231163;
+    -webkit-box-shadow: 0px 10px 13px -7px #231163, 0px 0px 15px 9px #231163;
+    box-shadow: 0px 10px 13px -7px #231163, 0px 0px 15px 9px #231163;
+    border: none;
+}
+
+/* MOBILE */
+.games_images_mobile{
+    transition: transform 0.5s;
+    border-radius: 5px;
+}
+.game_info_mobile{
+    position: relative;
+    width: 100%;
+    min-height: 50%;
+    background-size: cover;
+    transition: all 0.5s ease;
+    border-radius: 5px;
+    background-color: #231163;
+    /* -webkit-box-shadow: 0px 10px 13px -7px #3f0268, 0px 0px 15px 9px #3f0268;
+    box-shadow: 0px 10px 13px -7px #3f0268, 0px 0px 15px 9px #3f0268; */
+    border: none;
+}
+.game_info_mobile h1{
+    color:white;
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(10px,40px,60px);
+}
+.game_info_mobile p {
+    color: white;
+    word-break: break-all;
+    margin: 5%;
+}
+.game_info_mobile ul li{
+    color: white;
+    margin: 2%;
+}
+.details_mobile{
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vh;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.quote_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+.game_name{
+    font-style: italic;
+    font-size: 1.7em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 50%;
+}
+.quote_game_name{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    color: lightgray;
+    font-size: .9em;
+    padding-top: 1%;
+    width: 50%;
+}
+.quote_game_name h3{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+.quote_platforms{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    color: lightgray;
+    font-size: .9em;
+    border-bottom: 1px solid grey;
+    width: 50%;
+}
+.quote_platforms h3{
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+.highlight{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: #00909b;
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_no_data{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: red;
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_xbox{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--xbox-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+
+}
+.highlight_playstation{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--playstation-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_pc{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--pc-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_nintendo{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--nintendo-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_macOS{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--macOS-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_linux{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--linux-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_web{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--web-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.highlight_iOS{
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color:var(--iOS-color);
+    border-radius:var(--platforms-border-radius);
+    margin:var(--platforms-margin);
+    width:var(--platforms-width);
+    text-align: center;
+}
+.is_loading{
+    display: flex;
+    justify-content: center;
+}
+.loading{
+    color: white;
+    animation: spin infinite 5s linear;
+    margin-top: 2%;
+}
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}

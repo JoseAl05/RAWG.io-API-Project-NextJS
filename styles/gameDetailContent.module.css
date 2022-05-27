@@ -1,0 +1,194 @@
+.banner_conent {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--platforms-font-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner_conent h1 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 30px;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.highlight_metacritic_href {
+    font-weight: bold;
+    /*var(--platforms-font-color)
+    var(--platforms-margin)
+    */
+    color: black;
+    background-color: #fc3;
+    border-radius: var(--platforms-border-radius);
+    margin: 0 0 3% 1%;
+    width: var(--platforms-width);
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.highlight_no_data:hover {
+    color: black;
+}
+
+.highlight_xbox {
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: var(--xbox-color);
+    border-radius: var(--platforms-border-radius);
+    margin: var(--platforms-margin);
+    width: var(--platforms-width);
+    text-align: center;
+    word-spacing: var(--platforms-word-spacing);
+    box-shadow: var(--platforms-box-shadow);
+}
+
+.highlight_xbox p {
+    margin-bottom: 0;
+}
+
+.highlight_playstation {
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: var(--playstation-color);
+    border-radius: var(--platforms-border-radius);
+    margin: var(--platforms-margin);
+    width: var(--platforms-width);
+    text-align: center;
+    word-spacing: var(--platforms-word-spacing);
+    box-shadow: var(--platforms-box-shadow);
+}
+
+.highlight_playstation p {
+    margin-bottom: 0;
+}
+
+.highlight_pc {
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: var(--pc-color);
+    border-radius: var(--platforms-border-radius);
+    margin: var(--platforms-margin);
+    width: var(--platforms-width);
+    text-align: center;
+    word-spacing: var(--platforms-word-spacing);
+    box-shadow: var(--platforms-box-shadow);
+}
+
+.highlight_pc p {
+    margin-bottom: 0;
+}
+
+.highlight_nintendo {
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: var(--nintendo-color);
+    border-radius: var(--platforms-border-radius);
+    margin: var(--platforms-margin);
+    width: var(--platforms-width);
+    text-align: center;
+    word-spacing: var(--platforms-word-spacing);
+    box-shadow: var(--platforms-box-shadow);
+}
+
+.highlight_nintendo p {
+    margin-bottom: 0;
+}
+
+.highlight_macOS {
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: var(--macOS-color);
+    border-radius: var(--platforms-border-radius);
+    margin: var(--platforms-margin);
+    width: var(--platforms-width);
+    text-align: center;
+    word-spacing: var(--platforms-word-spacing);
+    box-shadow: var(--platforms-box-shadow);
+}
+
+.highlight_macOS p {
+    margin-bottom: 0;
+}
+
+.highlight_linux {
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: var(--linux-color);
+    border-radius: var(--platforms-border-radius);
+    margin: var(--platforms-margin);
+    width: var(--platforms-width);
+    text-align: center;
+    word-spacing: var(--platforms-word-spacing);
+    box-shadow: var(--platforms-box-shadow);
+}
+
+.highlight_linux p {
+    margin-bottom: 0;
+}
+
+.highlight_web {
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: var(--web-color);
+    border-radius: var(--platforms-border-radius);
+    margin: var(--platforms-margin);
+    width: var(--platforms-width);
+    text-align: center;
+    word-spacing: var(--platforms-word-spacing);
+    box-shadow: var(--platforms-box-shadow);
+}
+
+.highlight_web p {
+    margin-bottom: 0;
+}
+
+.highlight_iOS {
+    font-weight: bold;
+    color: var(--platforms-font-color);
+    background-color: var(--iOS-color);
+    border-radius: var(--platforms-border-radius);
+    margin: var(--platforms-margin);
+    width: var(--platforms-width);
+    text-align: center;
+    word-spacing: var(--platforms-word-spacing);
+    box-shadow: var(--platforms-box-shadow);
+}
+
+.highlight_iOS p {
+    margin-bottom: 0;
+}
+
+.description_content {
+    color: var(--platforms-font-color);
+    text-align: center;
+    margin: 5%;
+    font-size: 1.2rem;
+}
+
+.game-details_content {
+    color: var(--platforms-font-color);
+}
+
+.tag_grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    border: 2px var(--platforms-font-color) solid;
+    width: clamp(180px, 20%, 100%);
+    align-items: center;
+    margin: 0;
+}
+
+.tag_grid h1 {
+    font-weight: bold;
+    margin-bottom: 10%;
+}

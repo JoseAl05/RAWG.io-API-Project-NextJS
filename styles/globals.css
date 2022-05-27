@@ -1,0 +1,42 @@
+@import-normalize;
+@font-face {
+  font-family: 'palanquin';
+  src: local('palanquin'), url('../public/Fonts/Palanquin/palanquindark-regular.ttf') format('ttf');
+}
+*{
+  font-family: 'palanquin';
+}
+
+:root{
+  /* Main Background Color */
+  --background-color:#0b0b0b;
+  /* Login and Register Colors */
+  --navigation-label-color:#00c6cf;
+  --input-content-color:#111111;
+  --font-input-color:#ccfbe5;
+  --animation-border-color:#00ac7c;
+  /* Platforms Colors */
+  --pc-color:#c0ad00f8;
+  --xbox-color:#107C10;
+  --playstation-color:#003791;
+  --nintendo-color:#e60012;
+  --macOS-color:#555555;
+  --iOS-color:#555555;
+  --linux-color:#E95420;
+  --web-color:#160053f8;
+  --platforms-font-color:white;
+  --platforms-box-shadow:5px 5px 5px rgba(0, 0, 0, 0.6);
+  --platforms-width:clamp(180px,10%,100%);
+  --platforms-word-spacing:5px;
+  --platforms-border-radius: 5px;
+  --platforms-margin:0 0 1% 1%;
+}
+body{
+  background: var(--background-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}

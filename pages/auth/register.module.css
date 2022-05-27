@@ -1,0 +1,405 @@
+.select_form_list{
+    display: inline-flex;
+    margin-bottom: 1rem;
+    gap: 100px;
+}
+.select_form_label{
+    color: var(--navigation-label-color);
+    cursor: pointer;
+    font-weight: 700;
+    opacity: 0.3;
+    text-transform: capitalize;
+}
+.select_form_label_active{
+    opacity: 1;
+}
+.select_form_label a{
+    text-decoration: none;
+    color: var(--navigation-label-color);
+}
+.select_form_label_active a{
+    text-decoration: none;
+    color: var(--navigation-label-color);
+}
+.border_register_form{
+    width:clamp(360px,25%,100%);
+    position: relative;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 25px;
+    color: var(--input-content-color);
+    background: var(--input-content-color);
+}
+.register_module{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 7%;
+}
+.register_module h1{
+    text-transform: uppercase;
+    color: var(--navigation-label-color);
+    font-weight: bold;
+    text-align: center;
+}
+.register_form{
+    width: 100%;
+    position: relative;
+    height: 50px;
+}
+.register_form .input_register_email{
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding-top: 20px;
+    background: var(--input-content-color);
+    outline: none;
+    border: none;
+}
+.register_form .input_register_username{
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding-top: 20px;
+    background: var(--input-content-color);
+    outline: none;
+    border: none;
+}
+.register_form .input_register_password{
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding-top: 20px;
+    background: var(--input-content-color);
+    outline: none;
+    border: none;
+}
+.register_form .input_register_repassword{
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding-top: 20px;
+    background: var(--input-content-color);
+    outline: none;
+    border: none;
+}
+.register_form .label_register_email{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    width: 100%;
+    font-size: 20px;
+}
+.register_form .label_register_username{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    width: 100%;
+    font-size: 20px;
+}
+.register_form .label_register_password{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    width: 100%;
+    font-size: 20px;
+}
+.register_form .label_register_repassword{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    width: 100%;
+    font-size: 20px;
+}
+.label_icon_register{
+    position: absolute;
+    bottom: 7px;
+    left:3px;
+    opacity: 1;
+    color: var(--font-input-color);
+    transition: opacity 0.3s ease;
+}
+.label_register_content{
+    color: var(--font-input-color);
+    position: absolute;
+    bottom: 3px;
+    left: 30px;
+    transition: all 0.3s ease;
+    background: var(--input-content-color);
+    z-index: 1;
+}
+
+.input_register_email~.focus_border:before,
+.input_register_email~.focus_border:after{
+    content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--animation-border-color);
+	transition: 0.3s;
+}
+
+.input_register_email~.focus_border:after{
+    top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
+}
+
+.input_register_email~.focus_border i:before,
+.input_register_email~.focus_border i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background: var(--animation-border-color);
+	transition: 0.4s;
+}
+.input_register_email~.focus_border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+
+.input_register_email:focus~.focus_border:before,
+.input_register_email:focus~.focus_border:after {
+	width: 100%;
+	transition: 0.3s;
+}
+
+.input_register_email:focus~.focus_border i:before,
+.input_register_email:focus~.focus_border i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+.input_register_username~.focus_border:before,
+.input_register_username~.focus_border:after{
+    content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--animation-border-color);
+	transition: 0.3s;
+}
+
+.input_register_username~.focus_border:after{
+    top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
+}
+
+.input_register_username~.focus_border i:before,
+.input_register_username~.focus_border i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background: var(--animation-border-color);
+	transition: 0.4s;
+}
+.input_register_username~.focus_border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+
+.input_register_username:focus~.focus_border:before,
+.input_register_username:focus~.focus_border:after {
+	width: 100%;
+	transition: 0.3s;
+}
+
+.input_register_username:focus~.focus_border i:before,
+.input_register_username:focus~.focus_border i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+
+.input_register_password~.focus_border:before,
+.input_register_password~.focus_border:after{
+    content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--animation-border-color);
+	transition: 0.3s;
+}
+
+.input_register_password~.focus_border:after{
+    top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
+}
+
+.input_register_password~.focus_border i:before,
+.input_register_password~.focus_border i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background: var(--animation-border-color);
+	transition: 0.4s;
+}
+.input_register_password~.focus_border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+
+.input_register_password:focus~.focus_border:before,
+.input_register_password:focus~.focus_border:after {
+	width: 100%;
+	transition: 0.3s;
+}
+
+.input_register_password:focus~.focus_border i:before,
+.input_register_password:focus~.focus_border i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+.input_register_repassword~.focus_border:before,
+.input_register_repassword~.focus_border:after{
+    content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--animation-border-color);
+	transition: 0.3s;
+}
+
+.input_register_repassword~.focus_border:after{
+    top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
+}
+
+.input_register_repassword~.focus_border i:before,
+.input_register_repassword~.focus_border i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background: var(--animation-border-color);
+	transition: 0.4s;
+}
+.input_register_repassword~.focus_border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+
+.input_register_repassword:focus~.focus_border:before,
+.input_register_repassword:focus~.focus_border:after {
+	width: 100%;
+	transition: 0.3s;
+}
+
+.input_register_repassword:focus~.focus_border i:before,
+.input_register_repassword:focus~.focus_border i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+
+.register_form .input_register_email:focus + .label_register_email .label_register_content,
+.register_form .input_register_email:not(:placeholder-shown) + .label_register_email .label_register_content{
+    transform: translate(-95%,-185%);
+    font-size: 14px;
+    color: var(--animation-border-color);
+}
+.register_form .input_register_email:focus + .label_register_email .label_icon_register,
+.register_form .input_register_email:not(:placeholder-shown) + .label_register_email .label_icon_register{
+    content: '';
+    opacity: 0;
+}
+
+.register_form .input_register_username:focus + .label_register_username .label_register_content,
+.register_form .input_register_username:not(:placeholder-shown) + .label_register_username .label_register_content{
+    transform: translate(-55%,-175%);
+    font-size: 14px;
+    color: var(--animation-border-color);
+}
+.register_form .input_register_username:focus + .label_register_username .label_icon_register,
+.register_form .input_register_username:not(:placeholder-shown) + .label_register_username .label_icon_register{
+    content: '';
+    opacity: 0;
+}
+.register_form .input_register_password:focus + .label_register_password .label_register_content,
+.register_form .input_register_password:not(:placeholder-shown) + .label_register_password .label_register_content{
+    transform: translate(-55%,-175%);
+    font-size: 14px;
+    color: var(--animation-border-color);
+}
+.register_form .input_register_password:focus + .label_register_password .label_icon_register,
+.register_form .input_register_password:not(:placeholder-shown) + .label_register_password .label_icon_register{
+    content: '';
+    opacity: 0;
+}
+
+.register_form .input_register_repassword:focus + .label_register_repassword .label_register_content,
+.register_form .input_register_repassword:not(:placeholder-shown) + .label_register_repassword .label_register_content{
+    transform: translate(-23%,-175%);
+    font-size: 14px;
+    color: var(--animation-border-color);
+}
+.register_form .input_register_repassword:focus + .label_register_repassword .label_icon_register,
+.register_form .input_register_repassword:not(:placeholder-shown) + .label_register_repassword .label_icon_register{
+    content: '';
+    opacity: 0;
+}
+.btn_submit_register{
+    display: block;
+    background: none;
+    color:var(--font-input-color);
+    border: none;
+    border-radius: 3px;
+    line-height:2;
+    width: 50%;
+    letter-spacing: 0;
+    margin: 0 auto;
+    transition: all 600ms ease;
+}
+.btn_submit_register:hover,
+.btn_submit_register:active {
+  transform: scale(1.1, 1.1);
+  letter-spacing: 5px;
+  box-shadow: inset 0 100px 200px 0 var(--animation-border-color);
+  color: #2f4858;
+  border: none;
+}
+.btn_submit_register:hover::after{
+    opacity: 1;
+}
+.error_msg{
+    color:  #C70039 ;
+    font-weight: bold;
+}

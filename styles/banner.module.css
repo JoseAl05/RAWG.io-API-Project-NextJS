@@ -1,0 +1,46 @@
+.images{
+    display: flex;
+    justify-content: center;
+}
+.input_image{
+    position: absolute;
+    opacity: 0;
+    margin-top: 95vh;
+    cursor: pointer;
+}
+.label_image{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: solid 2px white;
+    border-radius: 999px;
+    background-color: transparent;
+    margin: 95vh 6px 0 6px;
+    z-index: 2;
+    cursor: pointer;
+    transition-duration: .4s;
+}
+.input_image:checked + .label_image{
+    background-color: white;
+}
+.input_image:focus + .label_image{
+    box-shadow: 0 0 0 2px teal, 0 0 18px white;
+}
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition-duration: .4s;
+    opacity: 1;
+}
+.input_image:checked ~ .slide {
+    transform: translateX(100%);
+}
+.input_image:checked + .label_image + .slide {
+    transform: translateX(0);
+    opacity: 1;
+}

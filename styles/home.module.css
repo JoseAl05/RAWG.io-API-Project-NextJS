@@ -1,0 +1,112 @@
+.disclaimer{
+    position: relative;
+    padding: 1rem 1rem;
+    margin: 0 auto;
+    width: 50%;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    color: #D92027;
+    background-color: #00c6cf;
+    text-align: center;
+    font-weight: bold;
+}
+.exclamation{
+    display: inline-block;
+    margin-right:0.5rem;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    margin: 5% auto;
+    width: 60%;
+}
+.page_title{
+    color: white;
+    font-weight: bold;
+    align-self: center;
+    font-size: 4em;
+    -webkit-animation: title 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: title 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+.title{
+    color: white;
+    font-weight: bold;
+    align-self: center;
+    font-size: 4em;
+}
+.slogan{
+    color: white;
+    align-self: center;
+    font-size: 1.5em;
+    line-height: 2;
+    font-weight: lighter;
+    margin: 3% auto;
+}
+
+.button{
+    background: none;
+    color: white;
+    width: 35%;
+    align-self: center;
+    border:1px solid #008fbd;
+    border-radius: 0 0 50% 50%;
+    line-height: 2rem;
+    font-size: 1.5em;
+    transition: 0.6s;
+    text-decoration: none;
+    text-align: center;
+}
+.button:hover{
+    transform: scale(1.2);
+    color: white;
+    letter-spacing: 0.2rem;
+    background:#008fbd;
+}
+
+.rawg_container{
+    margin: 25% auto;
+}
+.container .rawg_title{
+    letter-spacing: 0.7rem;
+}
+.container .footer{
+    color: grey;
+    font-size: 1.5rem;
+    margin:5% 0 0 0;
+}
+
+
+ @-webkit-keyframes title {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(400px) translateY(-300px);
+              transform: translateZ(400px) translateY(-300px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+              transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes title {
+    0% {
+      letter-spacing: 1em;
+      -webkit-transform: translateZ(400px) translateY(-300px);
+              transform: translateZ(400px) translateY(-300px);
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      -webkit-transform: translateZ(0) translateY(0);
+              transform: translateZ(0) translateY(0);
+      opacity: 1;
+    }
+  }

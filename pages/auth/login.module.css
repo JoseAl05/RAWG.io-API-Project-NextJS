@@ -1,0 +1,257 @@
+.select_form_list{
+    display: inline-flex;
+    margin-bottom: 1rem;
+    gap: 100px;
+}
+.select_form_label{
+    color: var(--navigation-label-color);
+    cursor: pointer;
+    font-weight: 700;
+    opacity: 0.3;
+    text-transform: capitalize;
+}
+.select_form_label a{
+    text-decoration: none;
+    color: var(--navigation-label-color);
+}
+.select_form_label_active{
+    opacity: 1;
+}
+.border_login_form{
+    width:clamp(360px,25%,100%);
+    position: relative;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 25px;
+    color: var(--input-content-color);
+    background: var(--input-content-color);
+}
+.login_module{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 13%;
+}
+.login_module h1{
+    text-transform: uppercase;
+    color: var(--navigation-label-color);
+    font-weight: bold;
+    text-align: center;
+}
+.alert{
+    width: 100%;
+    margin: 0px auto;
+}
+.alert ul li{
+    white-space: pre-line;
+}
+.login_form{
+    width: 100%;
+    position: relative;
+    height: 50px;
+}
+.login_form .input_login_email{
+    width: 100%;
+    height: 100%;
+    color: var(--font-input-color);
+    padding-top: 20px;
+    background: var(--input-content-color);
+    outline: none;
+    border: none;
+}
+.login_form .input_login_password{
+    width: 100%;
+    height: 100%;
+    color: var(--font-input-color);
+    padding-top: 20px;
+    background: var(--input-content-color);
+    outline: none;
+    border: none;
+}
+.login_form .label_login_email{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    width: 100%;
+    font-size: 20px;
+}
+.login_form .label_login_password{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+    width: 100%;
+    font-size: 20px;
+}
+
+.label_icon_login{
+    position: absolute;
+    bottom: 7px;
+    left:3px;
+    opacity: 1;
+    color: var(--font-input-color);
+    transition: opacity 0.3s ease;
+}
+.label_login_content{
+    color: var(--font-input-color);
+    position: absolute;
+    bottom: 3px;
+    left: 30px;
+    transition: all 0.3s ease;
+    background: var(--input-content-color);
+    z-index: 1;
+}
+
+.input_login_email~.focus_border:before,
+.input_login_email~.focus_border:after{
+    content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--animation-border-color);
+	transition: 0.3s;
+}
+
+.input_login_email~.focus_border:after{
+    top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
+}
+
+.input_login_email~.focus_border i:before,
+.input_login_email~.focus_border i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background: var(--animation-border-color);
+	transition: 0.4s;
+}
+.input_login_email~.focus_border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+
+.input_login_email:focus~.focus_border:before,
+.input_login_email:focus~.focus_border:after {
+	width: 100%;
+	transition: 0.3s;
+}
+
+.input_login_email:focus~.focus_border i:before,
+.input_login_email:focus~.focus_border i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+
+.input_login_password~.focus_border:before,
+.input_login_password~.focus_border:after{
+    content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	background: var(--animation-border-color);
+	transition: 0.3s;
+}
+
+.input_login_password~.focus_border:after{
+    top: auto;
+	bottom: 0;
+	left: auto;
+	right: 0;
+}
+
+.input_login_password~.focus_border i:before,
+.input_login_password~.focus_border i:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2px;
+	height: 0;
+	background: var(--animation-border-color);
+	transition: 0.4s;
+}
+.input_login_password~.focus_border i:after {
+	left: auto;
+	right: 0;
+	top: auto;
+	bottom: 0;
+}
+
+.input_login_password:focus~.focus_border:before,
+.input_login_password:focus~.focus_border:after {
+	width: 100%;
+	transition: 0.3s;
+}
+
+.input_login_password:focus~.focus_border i:before,
+.input_login_password:focus~.focus_border i:after {
+	height: 100%;
+	transition: 0.4s;
+}
+
+.login_form .input_login_email:focus + .label_login_email .label_login_content,
+.login_form .input_login_email:not(:placeholder-shown) + .label_login_email .label_login_content{
+    transform: translate(-95%,-175%);
+    font-size: 14px;
+    color: var(--animation-border-color);
+}
+.login_form .input_login_email:focus + .label_login_email .label_icon_login,
+.login_form .input_login_email:not(:placeholder-shown) + .label_login_email .label_icon_login{
+    content: '';
+    opacity: 0;
+}
+
+.login_form .input_login_password:focus + .label_login_password .label_login_content,
+.login_form .input_login_password:not(:placeholder-shown) + .label_login_password .label_login_content{
+    transform: translate(-55%,-175%);
+    font-size: 14px;
+    color: var(--animation-border-color);
+}
+.login_form .input_login_password:focus + .label_login_password .label_icon_login,
+.login_form .input_login_password:not(:placeholder-shown) + .label_login_password .label_icon_login{
+    content: '';
+    opacity: 0;
+}
+
+.btn_submit_login{
+    display: block;
+    background: none;
+    color:var(--font-input-color);
+    border: none;
+    border-radius: 3px;
+    line-height:2;
+    width: 50%;
+    letter-spacing: 0;
+    margin: 0 auto;
+    transition: all 600ms ease;
+}
+.btn_submit_login:hover,
+.btn_submit_login:active {
+  transform: scale(1.1, 1.1);
+  letter-spacing: 5px;
+  box-shadow: inset 0 100px 200px 0 var(--animation-border-color);
+  color: #2f4858;
+  border: none;
+}
+.btn_submit_login:hover::after{
+    opacity: 1;
+}
+/* .btn-submit-login:hover,
+.btn-submit-login:focus {
+  box-shadow: inset 6.5em 0 0 0 #c2f581;
+} */

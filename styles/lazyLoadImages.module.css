@@ -1,0 +1,44 @@
+.games_images{
+    transition: transform 0.5s;
+    border-radius: 5px;
+}
+.game_info{
+    position: relative;
+    width: 100%;
+    min-height: 50%;
+    background-size: cover;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s ease;
+    border-radius: 5px;
+}
+.game_info h1{
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: clamp(10px,40px,60px);
+}
+.game_info p {
+    color: white;
+    word-break: break-all;
+    margin: 5%;
+}
+.game_info ul li{
+    color: white;
+    margin: 2%;
+}
+
+.games_images:hover,.games_images:active{
+    transform: scale(1.1);
+}
+.games_images:hover .game_info,.games_images:active .game_info{
+    z-index: 3000;
+    opacity: 1;
+    transform: translateY(40%);
+    background-color: #402e3d;
+}
+.loading_icon{
+    margin: 25% 0 25% 45%;
+    color: white;
+    animation: spin infinite 2s linear;
+}
