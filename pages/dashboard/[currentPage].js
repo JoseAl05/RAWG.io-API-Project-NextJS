@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,Suspense } from 'react';
 import { useQuery } from "react-query";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import Image from 'next/image';
 import Head from 'next/head';
 import _ from 'lodash';
 import axios from "axios";
@@ -13,12 +12,12 @@ import useDebounce from '../../hooks/useDebounce';
 import styles from '../../styles/dashboard.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleRight, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import GamesGrid from '../components/gamesGrid/gamesGrid.server';
 
 
 
 const Dashboard = ({images,qGames}) => {
-    const isServer = typeof window === 'undefined'
-    console.log(isServer);
+
     const [searchValue, setSearchValue] = useState('');
     const debounedSearchValue = useDebounce(searchValue, 300);
     const router = useRouter();
@@ -56,7 +55,6 @@ const Dashboard = ({images,qGames}) => {
       if (isSuccess) {
         return (
           <>
-            {isServer && <h1>We are server side! :D</h1>}
             {data ?
               data.results.map((game, index) => {
                 return (
@@ -225,7 +223,14 @@ const Dashboard = ({images,qGames}) => {
             />
           </div>
           <div className={styles.game_searched}>{renderResult()}</div>
-            <div className={styles.games_grid}>
+          <Suspense fallback={
+            <div className={styles.is_loading}>
+              <FontAwesomeIcon icon={faSpinner} className={styles.loading} size='3x' spin/>
+            </div>
+          }>
+            <GamesGrid isMobile={isMobile} images={images}/>
+          </Suspense>
+            {/* <div className={styles.games_grid}>
               {isMobile ? (
                 <>
                     {images.map((imageProps, index) => {
@@ -328,7 +333,7 @@ const Dashboard = ({images,qGames}) => {
                   </div>
                 </>
               )}
-            </div>
+            </div> */}
           <PaginationButton
             qGames={qGames}
             storedParsedCurrentPage={parsedCurrentPage}
