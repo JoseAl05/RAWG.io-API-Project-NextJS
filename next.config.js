@@ -10,4 +10,8 @@ module.exports = {
     images: {
       domains: ['media.rawg.io'],
     },
+    experimental: {
+      runtime: 'nodejs',
+      serverComponents: true,
+    },
 }
