@@ -53,12 +53,11 @@
 
 /* DESKTOP */
 .games_images{
+    position: relative;
     transition: transform 0.5s;
     border-radius: 5px;
 }
 .game_info{
-    position: relative;
-    width: 100%;
     min-height: 50%;
     background-size: cover;
     opacity: 0;
@@ -70,7 +69,7 @@
     color:white;
     text-align: center;
     font-weight: bold;
-    font-size: clamp(10px,40px,60px);
+    font-size: 2rem;
 }
 .game_info p {
     color: white;
@@ -89,7 +88,7 @@
     align-items: center;
     gap: 1vh;
     transition: all 0.3s ease-in-out;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 .details:hover{
@@ -113,12 +112,11 @@
 
 /* MOBILE */
 .games_images_mobile{
+    position: relative;
     transition: transform 0.5s;
     border-radius: 5px;
 }
 .game_info_mobile{
-    position: relative;
-    width: 100%;
     min-height: 50%;
     background-size: cover;
     transition: all 0.5s ease;
@@ -132,7 +130,7 @@
     color:white;
     text-align: center;
     font-weight: bold;
-    font-size: clamp(10px,40px,60px);
+    font-size: 2rem;
 }
 .game_info_mobile p {
     color: white;
@@ -143,6 +141,23 @@
     color: white;
     margin: 2%;
 }
+.tag{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+.tag p{
+    background: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: white;
+    margin: 0.3rem;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-align: center;
+    align-self: center;
+}
 .details_mobile{
     color: white;
     text-decoration: none;
@@ -151,7 +166,7 @@
     align-items: center;
     gap: 1vh;
     transition: all 0.3s ease-in-out;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 .quote_container{
@@ -162,7 +177,7 @@
 }
 .game_name{
     font-style: italic;
-    font-size: 1.7em;
+    font-size: 1.7rem;
     color: white;
     display: flex;
     justify-content: center;
@@ -175,12 +190,12 @@
     flex-direction: column;
     align-items: center;
     color: lightgray;
-    font-size: .9em;
+    font-size: .9rem;
     padding-top: 1%;
     width: 50%;
 }
 .quote_game_name h3{
-    font-size: 1.3em;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 3%;
 }
@@ -190,12 +205,12 @@
     flex-direction: column;
     align-items: center;
     color: lightgray;
-    font-size: .9em;
+    font-size: .9rem;
     border-bottom: 1px solid grey;
     width: 50%;
 }
 .quote_platforms h3{
-    font-size: 1.3em;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 3%;
 }
