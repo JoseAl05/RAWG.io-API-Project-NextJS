@@ -13,6 +13,11 @@ const GamesGrid = ({isMobile,images}) => {
             <>
               {images.map((imageProps, index) => {
                 const { gameData, ...gameExtracted } = imageProps;
+                const releaseDate = imageProps.gameData.released;
+                const lastUpdate = imageProps.gameData.updated;
+                const newDate = new Date(releaseDate);
+                const updateDate = new Date(lastUpdate);
+                console.log(imageProps.gameData);
                 return (
                   <div className={styles.games_images_mobile} key={index}>
                     <Image
@@ -27,18 +32,16 @@ const GamesGrid = ({isMobile,images}) => {
                       id="details"
                     >
                       <h1>{imageProps.gameData.name}</h1>
-                      <p>Realease Date: {imageProps.gameData.released}</p>
-                      <p>Last Update: {imageProps.gameData.updated}</p>
-                      <ul>
-                        <p>Platforms: </p>
-                        {imageProps.gameData.platforms.map((platforms) => {
+                      <p>Realease Date: {newDate.toDateString()}</p>
+                      <p>Last Update: {updateDate.toDateString()}</p>
+                      <div className={styles.tag}>
+                        {imageProps.gameData.tags.map((tag, index) => {
                           return (
-                            <li key={platforms.platform.id}>
-                              {platforms.platform.name}
-                            </li>
-                          );
-                        })}
-                      </ul>
+                            <p>{tag.name}</p>
+                          )
+                        }
+                        )}
+                      </div>
                       <Link
                         href={{
                           pathname: `/gameDetails/${imageProps.gameData.id}/${imageProps.gameData.name}`,
@@ -64,12 +67,16 @@ const GamesGrid = ({isMobile,images}) => {
               <div className={styles.games_grid}>
                 {images.map((imageProps, index) => {
                   const { gameData, ...gameExtracted } = imageProps;
+                  const releaseDate = imageProps.gameData.released;
+                  const lastUpdate = imageProps.gameData.updated;
+                  const newDate = new Date(releaseDate);
+                  const updateDate = new Date(lastUpdate);
                   return (
                     <div className={styles.games_images} key={index}>
                       <Image
                         {...gameExtracted}
-                        width={700}
-                        height={475}
+                        width={400}
+                        height={275}
                         placeholder="blur"
                       />
                       <div
@@ -77,18 +84,16 @@ const GamesGrid = ({isMobile,images}) => {
                         key={imageProps.gameData.id}
                       >
                         <h1>{imageProps.gameData.name}</h1>
-                        <p>Realease Date: {imageProps.gameData.released}</p>
-                        <p>Last Update: {imageProps.gameData.updated}</p>
-                        <ul>
-                          <p>Platforms: </p>
-                          {imageProps.gameData.platforms.map((platforms) => {
+                        <p>Realease Date: {newDate.toDateString()}</p>
+                        <p>Last Update: {updateDate.toDateString()}</p>
+                        <div className={styles.tag}>
+                          {imageProps.gameData.tags.map((tag, index) => {
                             return (
-                              <li key={platforms.platform.id}>
-                                {platforms.platform.name}
-                              </li>
-                            );
-                          })}
-                        </ul>
+                              <p>{tag.name}</p>
+                            )
+                          }
+                          )}
+                        </div>
                         <Link
                           href={{
                             pathname: `/gameDetails/${imageProps.gameData.id}/${imageProps.gameData.name}`,
