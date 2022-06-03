@@ -12,8 +12,6 @@ import { useMediaQuery } from 'react-responsive';
 
 
 const GameDetails = ({images}) => {
-    const isServer = typeof window === 'undefined';
-    console.log(isServer);
     const router = useRouter();
     const {gameName} = router.query;
     const gameId = typeof router.query?.gameId === 'string' ? parseInt(router.query.gameId) : router.query.gameId;
@@ -41,14 +39,39 @@ const GameDetails = ({images}) => {
             staleTime: Infinity
         }
     )
+
+    const indexOfPC = data.platforms.map(pcIndex => pcIndex.platform.name).indexOf('PC');
+
+    const messageReqRecommended = data.platforms.map((platform,index) => {
+      const isPC = Object.values(platform.platform).indexOf('PC') !== -1 ? true : false;
+      const isRecommended = Object.keys(platform.requirements).indexOf('recommended') !== -1 ? true : false;
+      if(isPC){
+        if(!isRecommended){
+          return <p>No data of recommended PC requirements...</p>
+        }
+        return <p>{platform.requirements.recommended}</p>
+      }
+    })
+    const messageReqMinimum = data.platforms.map((platform,index) => {
+      const isPC = Object.values(platform.platform).indexOf('PC') !== -1 ? true : false;
+      const isMinimum = Object.keys(platform.requirements).indexOf('minimum') !== -1 ? true : false;
+      if(isPC){
+        if(!isMinimum){
+          return <p>No data of minimum PC requirements...</p>
+        }
+        return <p>{platform.requirements.minimum}</p>
+      }
+    })
+    console.log(messageReqMinimum)
+    console.log(indexOfPC);
     console.log(data);
+
     if(isSuccess){
         return (
           <>
             <Head>
               <title>{gameName}</title>
             </Head>
-            {isServer && <h1>We are server side! :D</h1>}
             <div>
               {images ? (
                 <div className={styles.images}>
@@ -226,6 +249,11 @@ const GameDetails = ({images}) => {
               {data ? (
                 <>
                   <div className={styles.description_content}>
+                    <h3 className={styles.website}>
+                      <a href={data.website}>
+                        Official Website.
+                      </a>
+                    </h3>
                     <p>{data.description_raw}</p>
                   </div>
                   <div className={styles.game_details_content}>
@@ -241,21 +269,20 @@ const GameDetails = ({images}) => {
                         return <p key={index}>{genre.name}</p>;
                       })}
                     </div>
+                    <div className={styles.stores_grid}>
+                      <h1>Stores</h1>
+                      {data.stores.map(stores =>{
+                        return <a href={`https://${stores.store.domain}`} target='_blank' rel="noreferer">{stores.store.name}</a>
+                      })}
+                    </div>
                     <div className={styles.pc_req_grid}>
                       <h1>PC Minimum Requeriments</h1>
                       {data.platforms ?
                         data.platforms.length !== 0 ?
-                          data.platforms.map((platform,index) => {
-                            const isPC = Object.values(platform.platform).indexOf('PC') !== -1 ? true : false;
-                            const isMinimum = Object.keys(platform.requirements).indexOf('minimum') !== -1 ? true : false;
-
-                            if(isPC){
-                              if(!isMinimum){
-                                return <p>No data of minimum PC requirements...</p>
-                              }
-                              return <p>{platform.requirements.minimum}</p>
-                            }
-                          })
+                          indexOfPC !== -1 ?
+                            <p>{messageReqMinimum[indexOfPC].props.children}</p>
+                          :
+                            <p>This game is not on PC</p>
                         :
                         <p>No data of PC requirements</p>
                       :
@@ -264,17 +291,10 @@ const GameDetails = ({images}) => {
                       <h1>PC Recommended Requirements</h1>
                       {data.platforms ?
                         data.platforms.length !== 0 ?
-                          data.platforms.map((platform,index) => {
-                            const isPC = Object.values(platform.platform).indexOf('PC') !== -1 ? true : false;
-                            const isRecommended = Object.keys(platform.requirements).indexOf('recommended') !== -1 ? true : false;
-
-                            if(isPC){
-                              if(!isRecommended){
-                                return <p>No data of recommended PC requirements...</p>
-                              }
-                              return <p>{platform.requirements.recommended}</p>
-                            }
-                          })
+                          indexOfPC !== -1 ?
+                            <p>{messageReqRecommended[indexOfPC].props.children}</p>
+                          :
+                            <p>This game is not on PC.</p>
                         :
                         <p>No data of PC requeriments</p>
                       :
