@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import SearchGameForm from '../components/searchGameForm/SearchGameForm';
 import SearchResults from '../components/searchResults/searchResults';
+import Sidebar from '../components/sidebar/Sidebar.server';
 
 const GamesGrid = lazy(() => import('../components/gamesGrid/gamesGrid.server'));
 
@@ -30,6 +31,7 @@ const Dashboard = ({images,qGames}) => {
         <Head>
           <title>Games List Page {currentPage}</title>
         </Head>
+        <Sidebar/>
         <div className={styles.games}>
           <SearchGameForm setSearchValue={setSearchValue} searchValue={searchValue}/>
           <div className={styles.game_searched}>
