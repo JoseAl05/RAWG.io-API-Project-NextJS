@@ -3,8 +3,7 @@ import {faAngleDoubleRight,faAngleRight,faAngleDoubleLeft,faAngleLeft} from '@fo
 import Link from 'next/link';
 import styles from '../../../styles/paginationButton.module.css';
 
-const PaginationButton = ({qGames,storedParsedCurrentPage}) => {
-
+const PaginationButton = ({qGames,storedParsedCurrentPage,url}) => {
     const qPages = qGames / 5;
     let pageNumbers = [];
     let currentPage = storedParsedCurrentPage;
@@ -24,10 +23,10 @@ const PaginationButton = ({qGames,storedParsedCurrentPage}) => {
                 </>
                 :
                 <>
-                    <Link href={`/dashboard/${1}`}>
+                    <Link href={`${url}/${1}`}>
                         <a><FontAwesomeIcon icon={faAngleDoubleLeft} color='white' className={styles.icon_pagination}/></a>
                     </Link>
-                    <Link href={`/dashboard/${currentPage - 1}`}>
+                    <Link href={`${url}/${currentPage - 1}`}>
                         <a><FontAwesomeIcon icon={faAngleLeft} color='white' className={styles.icon_pagination}/></a>
                     </Link>
                 </>
@@ -35,7 +34,7 @@ const PaginationButton = ({qGames,storedParsedCurrentPage}) => {
             <>
                 {
                     pageNumbers.map((numPage,index) => (
-                        <Link href={`/dashboard/${numPage}`} className={styles.curren_page} key={index}>
+                        <Link href={`${url}/${numPage}`} className={styles.curren_page} key={index}>
                             <a onClick={() => {currentPage = numPage}}>{numPage}</a>
                         </Link>
                     ))
@@ -48,10 +47,10 @@ const PaginationButton = ({qGames,storedParsedCurrentPage}) => {
                 </>
                 :
                 <>
-                    <Link href={`/dashboard/${currentPage + 1}`}>
+                    <Link href={`${url}/${currentPage + 1}`}>
                         <a><FontAwesomeIcon icon={faAngleRight} color='white' className={styles.icon_pagination}/></a>
                     </Link>
-                    <Link href={`/dashboard/${Math.trunc(qPages) }`}>
+                    <Link href={`${url}/${Math.trunc(qPages) }`}>
                         <a><FontAwesomeIcon icon={faAngleDoubleRight} color='white' className={styles.icon_pagination}/></a>
                     </Link>
                 </>

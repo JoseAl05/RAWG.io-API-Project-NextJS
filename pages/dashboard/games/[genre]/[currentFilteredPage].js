@@ -5,34 +5,34 @@ import _ from 'lodash';
 import axios from "axios";
 import { useMediaQuery } from 'react-responsive';
 import { getPlaiceholder } from 'plaiceholder';
-import PaginationButton from '../components/paginationButton/PaginationButton';
-import styles from '../../styles/dashboard.module.css';
+import PaginationButton from '../../../components/paginationButton/PaginationButton';
+import styles from '../../../../styles/dashboard.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
-import SearchGameForm from '../components/searchGameForm/SearchGameForm';
-import SearchResults from '../components/searchResults/searchResults';
-import Sidebar from '../components/sidebar/Sidebar.server';
+import SearchGameForm from '../../../components/searchGameForm/SearchGameForm';
+import SearchResults from '../../../components/searchResults/searchResults';
+import Sidebar from '../../../components/sidebar/Sidebar.server';
 
-const GamesGrid = lazy(() => import('../components/gamesGrid/gamesGrid.server'));
+const GamesGrid = lazy(() => import('../../../components/gamesGrid/gamesGrid.server'));
 
 
 
-const Dashboard = ({images,qGames}) => {
+const GamesByGenre = ({images,qGames}) => {
 
     const [searchValue, setSearchValue] = useState('');
-    const [genre, setGenre] = useState('');
+    const [selectedGenre, setSelectedGenre] = useState('');
     const router = useRouter();
-    const {currentPage} = router.query;
-    const parsedCurrentPage = parseInt(currentPage);
+    const {currentFilteredPage} = router.query;
+    const {genre} = router.query;
+    const parsedCurrentFilteredPage = parseInt(currentFilteredPage);
     const isMobile = useMediaQuery({ query: '(max-width:1280px)' })
-
 
     return (
       <>
         <Head>
-          <title>Games List Page {currentPage}</title>
+          <title>Games List Page {currentFilteredPage}</title>
         </Head>
-        <Sidebar genre={genre} setGenre={setGenre}/>
+        <Sidebar genre={selectedGenre} setGenre={setSelectedGenre}/>
         <div className={styles.games}>
           <SearchGameForm setSearchValue={setSearchValue} searchValue={searchValue}/>
           <div className={styles.game_searched}>
@@ -47,8 +47,8 @@ const Dashboard = ({images,qGames}) => {
           </Suspense>
           <PaginationButton
             qGames={qGames}
-            storedParsedCurrentPage={parsedCurrentPage}
-            url='/dashboard'
+            storedParsedCurrentPage={parsedCurrentFilteredPage}
+            url={`/dashboard/games/${genre.toLowerCase()}`}
           />
         </div>
       </>
@@ -58,10 +58,10 @@ const Dashboard = ({images,qGames}) => {
 export async function getServerSideProps(context) {
     const {params} = context;
     try{
-        const res = params.currentPage ?
-        await axios.get(`http://localhost:3000/api/games/${params.currentPage}`,{withCredentials:true})
+        const res = params.currentFilteredPage ?
+        await axios.get(`http://localhost:3000/api/gamesByGenre/${params.genre}/${params.currentFilteredPage}`,{withCredentials:true})
         :
-        await axios.get('http://localhost:3000/api/games/1',{withCredentials:true});
+        await axios.get(`http://localhost:3000/api/gamesByGenre/${params.genre}/1`,{withCredentials:true});
         if(res.status === 200){
             const qGames = res.data.count;
             const images = await Promise.all(
@@ -92,4 +92,4 @@ export async function getServerSideProps(context) {
     }
 }
 
-export default Dashboard;
+export default GamesByGenre;
